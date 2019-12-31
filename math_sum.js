@@ -78,7 +78,7 @@ class App extends React.Component {
       <div>
         <div className="score">Правильно: {this.state.score} Неравильно: {this.state.score_bad}</div>
 
-        <p>{this.state.stats.slice(-4).map((stats, i) => (<Row key={i} stats={stats} />))}</p>
+        <p>{this.state.stats.slice(-2).map((stats, i) => (<Row key={i} stats={stats} />))}</p>
         <p>{this.state.a} + {this.state.b} ?= {this.state.value}</p>
         <p>&nbsp;</p>
 
@@ -110,7 +110,7 @@ class App extends React.Component {
 const Row = ({ stats }) => {
   let a, b, good, from, lat;
   [good, a, b, from, lat] = stats;
-  let hl_answer = good ? "color-1024" : "color-256";
+  let hl_answer = good ? "color-1024" : "color-8";
   let hl_lat = lat < 5 ? "color-1024" : "color-256";
   return (
     <p>
