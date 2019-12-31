@@ -6,6 +6,7 @@ class App extends React.Component {
 
     this.state = {
       score: 0,
+      score_bad: 0,
       stats: [],
       example: 0,
       answer: 0,
@@ -46,6 +47,7 @@ class App extends React.Component {
     let good = (this.state.value === (this.state.a + this.state.b));
     let now = new Date();
     this.state.score += good;
+    this.state.score_bad += (1 - good);
     this.state.stats.push([good, this.state.a, this.state.b, now, (now - this.state.start) / 1000]);
     this.initBoard();
   }
@@ -74,7 +76,7 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <div className="score">Score: {this.state.score}</div>
+        <div className="score">Правильно: {this.state.score} Неравильно: {this.state.score_bad}</div>
 
         <p>{this.state.stats.slice(-4).map((stats, i) => (<Row key={i} stats={stats} />))}</p>
         <p>{this.state.a} + {this.state.b} ?= {this.state.value}</p>
@@ -91,9 +93,9 @@ class App extends React.Component {
           <div className="button" onClick={() => {this.move('6')}}>6</div>
         </div>
         <div className="buttons">
-          <div className="button" onClick={() => {this.move('4')}}>7</div>
-          <div className="button" onClick={() => {this.move('5')}}>8</div>
-          <div className="button" onClick={() => {this.move('6')}}>9</div>
+          <div className="button" onClick={() => {this.move('7')}}>7</div>
+          <div className="button" onClick={() => {this.move('8')}}>8</div>
+          <div className="button" onClick={() => {this.move('9')}}>9</div>
         </div>
         <div className="buttons">
           <div className="button" onClick={() => {this.move('⌫')}}>⌫</div>

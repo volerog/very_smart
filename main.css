@@ -3,6 +3,7 @@ body {
   background: #43cea2;
   background: -webkit-linear-gradient(to left, #43cea2 , #185a9d);
   background: linear-gradient(to left, #43cea2 , #185a9d);
+  height: 100%;
 }
 
 h1 {
@@ -21,14 +22,14 @@ table {
 .buttons {
   margin: 0 auto;
   display: flex;
-  width: 500px;
+  width: 250px;
 }
 
 .button {
   background-color: #303030;
   color: #50C8FF;
-  height: 30px;
-  width: 100px;
+  height: 50px;
+  width: 50px;
   border-radius: 5px;
   margin: 0 auto;
   margin-bottom: 25px;
